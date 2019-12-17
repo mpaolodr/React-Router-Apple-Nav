@@ -1,20 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //material icons
 import SearchIcon from "@material-ui/icons/Search";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 
-const NavBar = ({ data }) => {
-  const mainLink = data.map(obj => Object.keys(obj));
-
+const NavBar = ({ main }) => {
   return (
     <nav>
-      {mainLink.map(link => {
+      {main.map(obj => {
         return (
-          <Link key={link} to={`/${link}/`}>
-            {link}
-          </Link>
+          <NavLink key={obj.name.toLowerCase()} to={`/${obj.name}/`}>
+            {obj.name}
+          </NavLink>
         );
       })}
       <SearchIcon />

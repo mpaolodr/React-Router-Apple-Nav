@@ -1,46 +1,46 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useParams, Route } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 
-import data from "../data.js";
-
-const mainLinks = data.map(obj => {
-  return Object.keys(obj);
-});
-const subLinks = data.map(obj => {
-  return Object.entries(obj);
-});
-
-const [
-  { Mac },
-  { iPad },
-  { iPhone },
-  { Watch },
-  { TV },
-  { Music },
-  { Support }
-] = data;
-
-const SubLink = props => {
-  const { id } = useParams();
+const SubLink = ({ main }) => {
+  const [Mac, iPad, iPhone, Watch, TV, Music, Support] = main;
 
   return (
-    <div>
-      <h2>{id}</h2>
-
-      {iPhone.map(link => {
-        return <Link to={`/iPhone/`}>{link}</Link>;
-      })}
-      {Watch.map(link => {
-        return <Link to={`/Watch/`}>{link}</Link>;
-      })}
-      {TV.map(link => {
-        return <Link to={`/TV/`}>{link}</Link>;
-      })}
-      {Music.map(link => {
-        return <Link to={`/Music/`}>{link}</Link>;
-      })}
-      <Link>Support</Link>
+    <div className="subLink">
+      <Switch>
+        <Route path={`/${Mac.name}/`}>
+          {Mac.value.map(link => {
+            return <Link>{link}</Link>;
+          })}
+        </Route>
+        <Route path={`/${iPad.name}/`}>
+          {iPad.value.map(link => {
+            return <Link>{link}</Link>;
+          })}
+        </Route>
+        <Route path={`/${iPhone.name}/`}>
+          {iPhone.value.map(link => {
+            return <Link>{link}</Link>;
+          })}
+        </Route>
+        <Route path={`/${Watch.name}/`}>
+          {Watch.value.map(link => {
+            return <Link>{link}</Link>;
+          })}
+        </Route>
+        <Route path={`/${TV.name}/`}>
+          {TV.value.map(link => {
+            return <Link>{link}</Link>;
+          })}
+        </Route>
+        <Route path={`/${Music.name}/`}>
+          {Music.value.map(link => {
+            return <Link>{link}</Link>;
+          })}
+        </Route>
+        <Route path={`/${Support.name}/`}>
+          <Link>Maybe Some form</Link>
+        </Route>
+      </Switch>
     </div>
   );
 };

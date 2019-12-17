@@ -1,24 +1,39 @@
-import React from "react";
-import { Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Link } from "react-router-dom";
 
 import "./App.scss";
+import logo from "./logo.svg";
+
+//data
+import mainLinks from "./data.js";
 
 //components
-import Header from "./components/Header.js";
-import MacComponent from "./components/Mac.js";
-import IpadComponent from "./components/Ipad.js";
-import IphoneComponent from "./components/Iphone.js";
-import WatchComponent from "./components/Watch.js";
-import TVComponent from "./components/Tv.js";
-import MusicComponent from "./components/Music.js";
-import SupportComponent from "./components/Support.js";
+import SubLink from "./components/SubLink";
+import NavBar from "./components/NavBar";
+import Logo from "./components/Logo";
 
 function App() {
+  const [main] = useState(mainLinks);
+
   return (
     <div className="App">
-      <Header />
+      <header>
+        <Logo logo={logo} />
+        <NavBar main={main} />
+      </header>
+      <Route exact path={"/:id"}>
+        <SubLink main={main} />
+      </Route>
+    </div>
+  );
+}
 
-      <Route path="/Mac/">
+export default App;
+
+//Code to be refactored
+
+{
+  /* <Route path="/Mac/">
         <MacComponent />
       </Route>
       <Route path="/iPad/">
@@ -38,9 +53,5 @@ function App() {
       </Route>
       <Route path="/Support/">
         <SupportComponent />
-      </Route>
-    </div>
-  );
+      </Route> */
 }
-
-export default App;

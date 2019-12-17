@@ -1,6 +1,8 @@
 const mainLinks = [
   {
-    Mac: [
+    name: "Mac",
+    id: 0,
+    value: [
       "MacBook Air",
       'MackBook Pro 13"',
       'MacBook Pro 16"',
@@ -15,7 +17,9 @@ const mainLinks = [
     ]
   },
   {
-    iPad: [
+    name: "iPad",
+    id: 1,
+    value: [
       "iPad Pro",
       "iPad Air",
       "iPad",
@@ -29,7 +33,9 @@ const mainLinks = [
     ]
   },
   {
-    iPhone: [
+    name: "iPhone",
+    id: 2,
+    value: [
       "iPhone 11 Pro",
       "iPhone 11",
       "iPhone XR",
@@ -42,7 +48,9 @@ const mainLinks = [
     ]
   },
   {
-    Watch: [
+    name: "Watch",
+    id: 3,
+    value: [
       "Apple Watch Series 5",
       "Apple Watch Nike",
       "Apple Watch Hermes",
@@ -56,7 +64,9 @@ const mainLinks = [
     ]
   },
   {
-    TV: [
+    name: "TV",
+    id: 4,
+    value: [
       "Apple TV app",
       "Apple TV+",
       "Apple TV 4K",
@@ -66,7 +76,9 @@ const mainLinks = [
     ]
   },
   {
-    Music: [
+    name: "Music",
+    id: 5,
+    value: [
       "Apple Music",
       "AirPods Pro",
       "AirPods",
@@ -77,7 +89,9 @@ const mainLinks = [
     ]
   },
   {
-    Support: null
+    name: "Support",
+    id: 6,
+    value: []
   }
 ];
 

@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = ({ logo }) => {
   return (
-    <figure>
+    <Link className="logo" to="/">
       <img src={logo} alt={`Apple Logo`} />
-    </figure>
+    </Link>
   );
 };
 
