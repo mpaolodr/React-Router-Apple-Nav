@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+
+import "./App.scss";
+
+//components
+import Header from "./components/Header.js";
+import SubLink from "./components/SubLink.js";
+import MacComponent from "./components/Mac.js";
+import IpadComponent from "./components/Ipad.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      {/* <Route path="/:id/">
+        <SubLink />
+      </Route> */}
+      <Route path="/Mac/">
+        <MacComponent />
+      </Route>
+      <Route path="/iPad/">
+        <IpadComponent />
+      </Route>
     </div>
   );
 }
 
 export default App;
+
+{
+  /* <header>
+        <figure>
+          <img src={logo} alt="" />
+        </figure>
+        <nav>
+          <a href="">Mac</a>
+          <a href="">iPad</a>
+          <a href="">iPhone</a>
+          <a href="">Watch</a>
+          <a href="">TV</a>
+          <a href="">Music</a>
+          <a href="">Support</a>
+          <a href="">
+            <SearchIcon />
+          </a>
+          <a href="">
+            <LocalMallIcon />
+          </a>
+        </nav>
+      </header> */
+}
