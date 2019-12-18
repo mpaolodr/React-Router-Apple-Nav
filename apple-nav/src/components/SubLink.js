@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, Switch, Route, useParams } from "react-router-dom";
-
-import LaptopIcon from "@material-ui/icons/Laptop";
+import { Link, useParams, useRouteMatch } from "react-router-dom";
 
 const SubLink = ({ main }) => {
   const { id } = useParams();
+  const { url, path } = useRouteMatch();
 
   const appleItem = main.find(item => item.name === `${id}`);
 
